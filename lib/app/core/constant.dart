@@ -12,6 +12,8 @@ class Constant {
 
   static const LIST_PAGE_SIZE = 10;
 
+  static const double SNACK_BAR_OPACITY = 0.8;
+
   static final DateFormat backendDateFormat = DateFormat('dd/MM/yyyy HH:mm:ss');
 
   // or new Dio with a BaseOptions instance.
