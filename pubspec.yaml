@@ -1,0 +1,94 @@
+name: flutter_getx_starter
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  cupertino_icons: ^1.0.2
+
+  #Read SVG Image
+  flutter_svg:
+
+  #State Management
+  get:
+
+  #Locatino GPS
+  #location:
+
+  # dependency injection
+  get_it:
+  injectable:
+
+  # Responsive Text
+  auto_size_text: ^3.0.0-nullsafety.0
+
+  # Advenced Rest API
+  dio:
+
+  # Offline Management
+  hive:
+  hive_flutter:
+
+  # concept class attribute inside class
+  freezed_annotation:
+
+  # check for connectivity
+  #data_connection_checker:
+  connectivity:
+
+  # store data locally
+  shared_preferences:
+
+  # unit testing
+  mockito:
+
+  # value equality
+  equatable:
+
+  # for DateFormat
+  intl:
+
+  #infinite scroll list
+  infinite_scroll_pagination:
+
+  #loading animation
+  shimmer:
+
+  # for links
+  url_launcher:
+
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  # flutter pub run build_runner watch --delete-conflicting-outputs
+  build_runner:
+
+  # principle to genereate class inside class as attribute
+  freezed:
+
+  # genereate support of saving a model as json locally
+  hive_generator:
+
+  # for unit testing
+  http_mock_adapter:
+
+  # generate dependency injection
+  injectable_generator:
+
+  # change package name to production package name via
+  # 1. flutter pub run change_app_package_name:main com.newpackage.name
+  change_app_package_name:
+
+  # change icon launcher via
+  # 1. add assets/icon/icon.png
+  # 2. flutter pub run flutter_launcher_icons:main -f flutter_launcher_icons.yaml
+  flutter_launcher_icons:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
