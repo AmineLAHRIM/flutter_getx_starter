@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class HomeController extends GetxController {
   //TODO: Implement HomeController
 

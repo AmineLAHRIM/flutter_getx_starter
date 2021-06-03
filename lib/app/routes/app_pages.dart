@@ -1,5 +1,6 @@
-import 'package:flutter_getx_starter/app/modules/home/views/home_view.dart';
 import 'package:get/get.dart';
+
+import 'package:flutter_getx_starter/app/modules/home/views/home_view.dart';
 
 part 'app_routes.dart';
 

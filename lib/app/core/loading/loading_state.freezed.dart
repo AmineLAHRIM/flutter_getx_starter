@@ -49,7 +49,6 @@ mixin _$LoadingState {
     required TResult Function() loaded,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
@@ -59,7 +58,6 @@ mixin _$LoadingState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LOADING value) loading,
@@ -68,7 +66,6 @@ mixin _$LoadingState {
     required TResult Function(LOADED value) loaded,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LOADING value)? loading,
@@ -92,7 +89,6 @@ class _$LoadingStateCopyWithImpl<$Res> implements $LoadingStateCopyWith<$Res> {
   _$LoadingStateCopyWithImpl(this._value, this._then);
 
   final LoadingState _value;
-
   // ignore: unused_field
   final $Res Function(LoadingState) _then;
 }
@@ -283,7 +279,6 @@ abstract class EMPTY implements LoadingState {
 abstract class $ERRORCopyWith<$Res> {
   factory $ERRORCopyWith(ERROR value, $Res Function(ERROR) then) =
       _$ERRORCopyWithImpl<$Res>;
-
   $Res call({String? message, MessageType? type});
 }
 
@@ -408,9 +403,7 @@ abstract class ERROR implements LoadingState {
   const factory ERROR({String? message, MessageType? type}) = _$ERROR;
 
   String? get message => throw _privateConstructorUsedError;
-
   MessageType? get type => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $ERRORCopyWith<ERROR> get copyWith => throw _privateConstructorUsedError;
 }
