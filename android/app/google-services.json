@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "774406167283",
+    "project_id": "flutter-starter-e7e06",
+    "storage_bucket": "flutter-starter-e7e06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774406167283:android:ffd5345f89b1072ad17586",
+        "android_client_info": {
+          "package_name": "com.flutterstarter.amine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774406167283-opk48dbcvackh19uftue8q4cdu0ge5vs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgQG5s1PlMFDV-4OpQoWNLoGPL-ewv0rE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774406167283-opk48dbcvackh19uftue8q4cdu0ge5vs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "774406167283-qaubgtbr6ed811cvu6nhkcjodmdmvor8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterstarter.amine"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

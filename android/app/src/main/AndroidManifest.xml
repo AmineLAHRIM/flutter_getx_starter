@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.amine.fluttergetxstarter.flutter_getx_starter">
+    package="com.flutterstarter.amine">
    <application
         android:label="flutter_getx_starter"
         android:icon="@mipmap/ic_launcher">
