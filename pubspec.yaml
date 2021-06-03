@@ -63,6 +63,18 @@ dependencies:
   # for links
   url_launcher:
 
+  # Add the dependency for the Firebase Core Flutter SDK
+  firebase_core:
+  # Add the dependency for the FlutterFire plugin for Google Analytics
+  firebase_remote_config:
+  firebase_analytics:
+  firebase_messaging:
+  firebase_auth:
+  flutter_local_notifications:
+
+  # to create GOOGLE_APPLICATION_CREDENTIALS
+  googleapis_auth:
+
   flutter:
     sdk: flutter
 
