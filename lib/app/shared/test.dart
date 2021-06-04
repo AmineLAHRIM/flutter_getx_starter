@@ -1,1 +1,3 @@
-asdfasdf
+class TestMaster{
+
+}
