@@ -1,3 +1,3 @@
-class TestMaster{
+class TestMaster2{
 
 }
