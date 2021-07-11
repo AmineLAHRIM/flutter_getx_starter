@@ -11,6 +11,7 @@ dependencies:
   #Read SVG Image
   flutter_svg:
 
+
   #State Management
   get:
 
@@ -63,6 +64,9 @@ dependencies:
   # for links
   url_launcher:
 
+  # Google Fonts
+  google_fonts:
+
   # Add the dependency for the Firebase Core Flutter SDK
   firebase_core:
   # Add the dependency for the FlutterFire plugin for Google Analytics
@@ -102,6 +106,10 @@ dev_dependencies:
   # 1. add assets/icon/icon.png
   # 2. flutter pub run flutter_launcher_icons:main -f flutter_launcher_icons.yaml
   flutter_launcher_icons:
+
+  # to generate translations
+  # 1. write your text in assets/locales/en_US and in other assets/locales/...json then run command via
+  # 2. get generate locales assets/locales
   flutter_test:
     sdk: flutter
 

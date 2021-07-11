@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx_starter/app/core/constant.dart';
 import 'package:flutter_getx_starter/app/core/error/errors.dart';
 import 'package:flutter_getx_starter/app/core/loading/loading_state.dart';
-import 'package:flutter_getx_starter/app/core/theme/default/default_theme.dart';
+import 'package:flutter_getx_starter/app/core/theme/light/light_theme.dart';
 import 'package:get/get.dart';
 
 class SharedSnackBar {
@@ -24,9 +24,17 @@ class SharedSnackBar {
     StreamSubscription loadingSub = loadingState!.listen((value) {
       print('loadingState' + value.toString());
 
-      if (value != null && value is ERROR) {
+      // ERROR
+      if (value is ERROR) {
         if (!skipDuplicatedMsg && message == value.message && messageType == value.type && DateTime.now().difference(errorShowedDateTime) <= snackbarDurationToHide) {
           print('return ERROR');
+          return;
+        }
+        message = value.message;
+        messageType = value.type;
+      } else if (value is LOADED) {
+        if (!skipDuplicatedMsg && message == value.message && messageType == value.type && DateTime.now().difference(errorShowedDateTime) <= snackbarDurationToHide) {
+          print('return LOADED');
           return;
         }
         message = value.message;
@@ -36,22 +44,22 @@ class SharedSnackBar {
       }
 
       if (messageType != null && message != null) {
-        Color color = DefaultTheme.primary;
+        Color color = LightTheme().primaryColor;
         switch (messageType) {
           case MessageType.info:
-            color = DefaultTheme.info.withOpacity(Constant.SNACK_BAR_OPACITY);
+            color = LightTheme().info.withOpacity(Constant.SNACK_BAR_OPACITY);
             break;
           case MessageType.danger:
-            color = DefaultTheme.danger.withOpacity(Constant.SNACK_BAR_OPACITY);
+            color = LightTheme().danger.withOpacity(Constant.SNACK_BAR_OPACITY);
             break;
           case MessageType.success:
-            color = DefaultTheme.success.withOpacity(Constant.SNACK_BAR_OPACITY);
+            color = LightTheme().success.withOpacity(Constant.SNACK_BAR_OPACITY);
             break;
           case MessageType.warning:
-            color = DefaultTheme.warning.withOpacity(Constant.SNACK_BAR_OPACITY);
+            color = LightTheme().warning.withOpacity(Constant.SNACK_BAR_OPACITY);
             break;
           default:
-            color = DefaultTheme.primary.withOpacity(Constant.SNACK_BAR_OPACITY);
+            color = LightTheme().primaryColor.withOpacity(Constant.SNACK_BAR_OPACITY);
         }
 
         errorShowedDateTime = DateTime.now();

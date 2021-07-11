@@ -10,7 +10,6 @@ import 'package:flutter_getx_starter/app/data/models/dto/fcm_push_notifcation_dt
 import 'package:flutter_getx_starter/app/routes/notification_routes.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
-import 'package:googleapis_auth/auth_browser.dart';
 import 'package:googleapis_auth/auth_io.dart';
 import 'package:hive/hive.dart';
 import 'package:http/http.dart' as http;

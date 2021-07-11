@@ -1,4 +1,5 @@
 {
+  "app_name": "Starter project",
   "buttons": {
     "login": "Login",
     "sign_in": "Sign-in",

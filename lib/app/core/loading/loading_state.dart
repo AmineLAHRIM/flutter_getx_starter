@@ -10,8 +10,7 @@ abstract class LoadingState with _$LoadingState {
 
   const factory LoadingState.empty() = EMPTY;
 
-  const factory LoadingState.error({String? message, MessageType? type}) =
-      ERROR;
+  const factory LoadingState.error({String? message, MessageType? type}) = ERROR;
 
-  const factory LoadingState.loaded() = LOADED;
+  const factory LoadingState.loaded({String? message, MessageType? type}) = LOADED;
 }

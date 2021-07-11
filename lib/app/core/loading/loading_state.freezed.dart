@@ -31,8 +31,11 @@ class _$LoadingStateTearOff {
     );
   }
 
-  LOADED loaded() {
-    return const LOADED();
+  LOADED loaded({String? message, MessageType? type}) {
+    return LOADED(
+      message: message,
+      type: type,
+    );
   }
 }
 
@@ -46,7 +49,7 @@ mixin _$LoadingState {
     required TResult Function() loading,
     required TResult Function() empty,
     required TResult Function(String? message, MessageType? type) error,
-    required TResult Function() loaded,
+    required TResult Function(String? message, MessageType? type) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,7 +57,7 @@ mixin _$LoadingState {
     TResult Function()? loading,
     TResult Function()? empty,
     TResult Function(String? message, MessageType? type)? error,
-    TResult Function()? loaded,
+    TResult Function(String? message, MessageType? type)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,7 +136,7 @@ class _$LOADING implements LOADING {
     required TResult Function() loading,
     required TResult Function() empty,
     required TResult Function(String? message, MessageType? type) error,
-    required TResult Function() loaded,
+    required TResult Function(String? message, MessageType? type) loaded,
   }) {
     return loading();
   }
@@ -144,7 +147,7 @@ class _$LOADING implements LOADING {
     TResult Function()? loading,
     TResult Function()? empty,
     TResult Function(String? message, MessageType? type)? error,
-    TResult Function()? loaded,
+    TResult Function(String? message, MessageType? type)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -224,7 +227,7 @@ class _$EMPTY implements EMPTY {
     required TResult Function() loading,
     required TResult Function() empty,
     required TResult Function(String? message, MessageType? type) error,
-    required TResult Function() loaded,
+    required TResult Function(String? message, MessageType? type) loaded,
   }) {
     return empty();
   }
@@ -235,7 +238,7 @@ class _$EMPTY implements EMPTY {
     TResult Function()? loading,
     TResult Function()? empty,
     TResult Function(String? message, MessageType? type)? error,
-    TResult Function()? loaded,
+    TResult Function(String? message, MessageType? type)? loaded,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -352,7 +355,7 @@ class _$ERROR implements ERROR {
     required TResult Function() loading,
     required TResult Function() empty,
     required TResult Function(String? message, MessageType? type) error,
-    required TResult Function() loaded,
+    required TResult Function(String? message, MessageType? type) loaded,
   }) {
     return error(message, type);
   }
@@ -363,7 +366,7 @@ class _$ERROR implements ERROR {
     TResult Function()? loading,
     TResult Function()? empty,
     TResult Function(String? message, MessageType? type)? error,
-    TResult Function()? loaded,
+    TResult Function(String? message, MessageType? type)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -412,6 +415,7 @@ abstract class ERROR implements LoadingState {
 abstract class $LOADEDCopyWith<$Res> {
   factory $LOADEDCopyWith(LOADED value, $Res Function(LOADED) then) =
       _$LOADEDCopyWithImpl<$Res>;
+  $Res call({String? message, MessageType? type});
 }
 
 /// @nodoc
@@ -422,25 +426,61 @@ class _$LOADEDCopyWithImpl<$Res> extends _$LoadingStateCopyWithImpl<$Res>
 
   @override
   LOADED get _value => super._value as LOADED;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+    Object? type = freezed,
+  }) {
+    return _then(LOADED(
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as MessageType?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$LOADED implements LOADED {
-  const _$LOADED();
+  const _$LOADED({this.message, this.type});
+
+  @override
+  final String? message;
+  @override
+  final MessageType? type;
 
   @override
   String toString() {
-    return 'LoadingState.loaded()';
+    return 'LoadingState.loaded(message: $message, type: $type)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LOADED);
+    return identical(this, other) ||
+        (other is LOADED &&
+            (identical(other.message, message) ||
+                const DeepCollectionEquality()
+                    .equals(other.message, message)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(message) ^
+      const DeepCollectionEquality().hash(type);
+
+  @JsonKey(ignore: true)
+  @override
+  $LOADEDCopyWith<LOADED> get copyWith =>
+      _$LOADEDCopyWithImpl<LOADED>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -448,9 +488,9 @@ class _$LOADED implements LOADED {
     required TResult Function() loading,
     required TResult Function() empty,
     required TResult Function(String? message, MessageType? type) error,
-    required TResult Function() loaded,
+    required TResult Function(String? message, MessageType? type) loaded,
   }) {
-    return loaded();
+    return loaded(message, type);
   }
 
   @override
@@ -459,11 +499,11 @@ class _$LOADED implements LOADED {
     TResult Function()? loading,
     TResult Function()? empty,
     TResult Function(String? message, MessageType? type)? error,
-    TResult Function()? loaded,
+    TResult Function(String? message, MessageType? type)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded();
+      return loaded(message, type);
     }
     return orElse();
   }
@@ -496,5 +536,10 @@ class _$LOADED implements LOADED {
 }
 
 abstract class LOADED implements LoadingState {
-  const factory LOADED() = _$LOADED;
+  const factory LOADED({String? message, MessageType? type}) = _$LOADED;
+
+  String? get message => throw _privateConstructorUsedError;
+  MessageType? get type => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LOADEDCopyWith<LOADED> get copyWith => throw _privateConstructorUsedError;
 }
